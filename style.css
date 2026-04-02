@@ -1,0 +1,509 @@
+* {
+  margin: 0;
+  padding: 0px;
+  box-sizing: border-box;
+  font-family: 'Arial';
+  font-size: 20px;
+}
+
+body {
+  background: #0a0a0a;
+  color: white;
+  scroll-behavior: smooth;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* HEADER */
+header {
+  position: fixed;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: transparent;
+  transition: 0.3s;
+  z-index: 1000;
+  padding-right: 80px;
+}
+
+header.scrolled {
+  /*background: #111;*/
+  background: rgba(0, 0, 0, 0.850);
+}
+
+.logo { 
+    width: 200px;
+}
+
+/* NAV */
+nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #32ff7e;
+  box-shadow: 0 0 15px #00ff88;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+/*.menu-toggle {
+  display: none;
+  font-size: 25px;
+}*/
+
+/* HERO */
+.hero {
+  height: 100vh;
+  background: url('faixada.jpg') center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;  
+  background-attachment: fixed;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000cc;
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+}
+
+.btn {
+  background: #00ff88;
+  padding: 12px 25px;
+  color: black;
+  margin-top: 20px;
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* SEÇÕES */
+section {
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(10px);
+  margin: 10px;
+  padding: 20px;
+  width: 220px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* EFEITO GLOW */
+.glow:hover {
+  box-shadow: 0 0 15px #00ff88;
+}
+
+/* DESTAQUE */
+.destaque {
+  border: 2px solid #00ff88;
+}
+
+/* WHATS */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #00ff88;
+  padding: 15px;
+  border-radius: 50%;
+  color: black;
+  font-size: 20px;
+}
+
+/* LOADER */
+#loader {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  border: 4px solid #333;
+  border-top: 4px solid #00ff88;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}
+
+/* ANIMAÇÃO */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: 1s;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE 
+@media(max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}*/
+
+.footer{
+    font-size: 15px;
+    text-align: center;
+    padding: 5px;
+}
+
+footer{
+    padding: 30px;
+}
+
+.span{
+  color: #04D939;
+}
+
+h2{
+  padding: 40px;
+  font-size: 40px;
+}
+
+.text{
+  font-size: 25px;
+  padding: 10px;
+}
+
+.social-float {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 999;
+}
+
+.btn-social {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: 0.3s;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.btn-social:hover {
+    transform: scale(1.1);
+}
+
+.instagram {
+    background: linear-gradient(45deg, #833AB4, #FD1D1D, #FCAF45);
+}
+
+.facebook {
+    background: #1877F2;
+}
+
+.telegram {
+    background: #0088cc;
+}
+
+.btn-social::after {
+    content: attr(id);
+    position: absolute;
+    right: 60px;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: 0.3s;
+    white-space: nowrap;
+}
+
+.btn-social:hover::after {
+    opacity: 1;
+}
+
+.social-float {
+    animation: aparecer 1s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translate(50px, -50%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(0, -50%);
+    }
+}
+
+.resultados .card h3 {
+  font-size: 2em;
+  color: #00ff88;
+}
+
+.portfolio {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.item {
+  position: relative;
+  margin: 10px;
+}
+
+.item img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #000000cc;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.3s;
+  border-radius: 10px;
+}
+
+.item:hover .overlay {
+  opacity: 1;
+}
+
+.btn {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 #00ff88; }
+  70% { box-shadow: 0 0 0 10px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+.whatsapp {
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+span{
+  font-size: 50px;
+}
+
+#particles {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.cursor {
+  width: 15px;
+  height: 15px;
+  background: #00ff88;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.card {
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.hero h1 {
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+iframe{
+  border-radius: 25px;
+}
+
+body {
+  background: #000;
+}
+
+/* Container */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+  height: 90px;
+  justify-content: flex-start;
+}
+
+/* SVG */
+.logo-svg {
+  width: clamp(180px, 25vw, 320px);
+}
+
+/* Neon base */
+.bulb, .wave, .text-main, .text-sub {
+  fill: white;
+  stroke: white;
+}
+
+/* TEXTO */
+.text-main {
+  font: 700 38px Arial;
+  letter-spacing: 4px;
+  fill: white;
+  filter: drop-shadow(0 0 10px white);
+}
+
+.text-sub {
+  font: 400 14px Arial;
+  letter-spacing: 3px;
+  fill: white;
+  opacity: 0.8;
+}
+
+/* NEON GLOW */
+.bulb {
+  filter:
+    drop-shadow(0 0 5px white)
+    drop-shadow(0 0 15px white)
+    drop-shadow(0 0 30px white);
+}
+
+/* ONDAS */
+.wave {
+  fill: none;
+  stroke-width: 4;
+  stroke-linecap: round;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 10px white);
+}
+
+/* ANIMAÇÃO DAS ONDAS */
+.w1 {
+  animation: pulse 2s infinite;
+}
+.w2 {
+  animation: pulse 2s infinite 0.3s;
+}
+.w3 {
+  animation: pulse 2s infinite 0.6s;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  100% {
+    opacity: 0.2;
+    transform: scale(0.95);
+  }
+}
+
+/* ANIMAÇÃO DE BRILHO */
+.logo-container {
+  animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    filter: drop-shadow(0 0 5px white);
+  }
+  to {
+    filter: drop-shadow(0 0 25px white);
+  }
+}
