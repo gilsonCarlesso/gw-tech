@@ -10,8 +10,6 @@ body {
   background: #0a0a0a;
   color: white;
   scroll-behavior: smooth;
-  padding-left: 40px;
-  padding-right: 40px;
 }
 
 /* HEADER */
@@ -51,10 +49,10 @@ nav a:hover {
   border-radius: 25px;
 }
 
-/*.menu-toggle {
+.menu-toggle {
   display: none;
   font-size: 25px;
-}*/
+}
 
 /* HERO */
 .hero {
@@ -65,6 +63,8 @@ nav a:hover {
   justify-content: center;
   position: relative;  
   background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 .overlay {
@@ -109,16 +109,18 @@ section {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card {
   background: rgba(255,255,255,0.05);
   backdrop-filter: blur(10px);
-  margin: 10px;
-  padding: 20px;
-  width: 220px;
+  padding: 1%;
+  width: 250px;
   border-radius: 10px;
   transition: 0.3s;
+  flex: 1 1 250px;
+  max-width: 220px;
 }
 
 .card:hover {
@@ -182,27 +184,6 @@ section {
   opacity: 1;
   transform: translateY(0);
 }
-
-/* MOBILE 
-@media(max-width: 768px) {
-  nav {
-    display: none;
-    flex-direction: column;
-    background: #111;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 200px;
-  }
-
-  nav.active {
-    display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
-  }
-}*/
 
 .footer{
     font-size: 15px;
@@ -506,4 +487,96 @@ body {
   to {
     filter: drop-shadow(0 0 25px white);
   }
+}
+
+/* MOBILE */ 
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* HERO */
+  .hero h1 {
+    font-size: 1.6em;
+    padding: 0 20px;
+  }
+
+  .hero p {
+    font-size: 0.9em;
+    padding: 0 10px;
+  }
+
+  /* HEADER */
+  header {
+    padding: 10px;
+  }
+
+  .logo {
+    width: 100px;
+  }
+
+  /* MENU */
+  nav {
+    width: 100%;
+    right: 0;
+    transition: 0.3s;
+  }
+
+  nav a {
+    padding: 10px;
+    display: block;
+  }
+
+  /* CARDS */
+  .card {
+    width: 100%;
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  /* PORTFÓLIO */
+  .item img {
+    width: 300px;
+    height: 200px;
+  }
+
+  /* SEÇÕES */
+  section {
+    padding: 50px 15px;
+  }
+
+  iframe{
+    border-radius: 10px;
+    width: 100%;
+  }
+
+  h1{
+    margin-bottom: 30px;
+  }
+
+  span{
+    font-size: 45px;
+  }
+
 }
