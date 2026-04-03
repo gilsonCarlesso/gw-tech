@@ -10,12 +10,12 @@ window.addEventListener("scroll", () => {
 });
 
 // MENU MOBILE
-/*const toggle = document.getElementById("menu-toggle");
+const toggle = document.getElementById("menu-toggle");
 const nav = document.getElementById("nav");
 
 toggle.addEventListener("click", () => {
   nav.classList.toggle("active");
-});*/
+});
 
 // ANIMAÇÃO
 const elements = document.querySelectorAll(".fade-in");
